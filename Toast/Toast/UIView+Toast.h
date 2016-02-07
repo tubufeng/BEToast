@@ -63,6 +63,9 @@ extern const NSString * CSToastPositionBottom;
 - (void)makeToast:(NSString *)message
          duration:(NSTimeInterval)duration
          position:(id)position;
+- (void)makeBEToast:(NSString *)message
+         duration:(NSTimeInterval)duration
+         position:(id)position;
 
 /**
  Creates and presents a new toast view with a message. Duration, position, and

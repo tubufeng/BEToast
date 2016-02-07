@@ -81,7 +81,7 @@ static NSString * ZOToastDemoCellId     = @"ZOToastDemoCellId";
     if (section == 0) {
         return 2;
     } else {
-        return 9;
+        return 10;
     }
 }
 
@@ -156,6 +156,8 @@ static NSString * ZOToastDemoCellId     = @"ZOToastDemoCellId";
             cell.textLabel.text = @"Show an image as toast at point\n(110, 110)";
         } else if (indexPath.row == 8) {
             cell.textLabel.text = (self.isShowingActivity) ? @"Hide toast activity" : @"Show toast activity";
+        }else if (indexPath.row==9){
+            cell.textLabel.text = @"Make BE toast";
         }
         
         return cell;
@@ -268,6 +270,9 @@ static NSString * ZOToastDemoCellId     = @"ZOToastDemoCellId";
         _showingActivity = !self.isShowingActivity;
         
         [tableView reloadData];
+    }else if (indexPath.row == 9) {
+        // Make toast
+        [self.navigationController.view makeBEToast:@"系统异常，请联系开发商。" duration:2 position:CSToastPositionCenter];
     }
 }
 
